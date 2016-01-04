@@ -1,70 +1,30 @@
-jQuery(function($) {'use strict',
+/*price range*/
 
-	//#main-slider
-	$(function(){
-		$('#main-slider.carousel').carousel({
-			interval: 8000
-		});
-	});
+ $('#sl2').slider();
 
-
-	// accordian
-	$('.accordion-toggle').on('click', function(){
-		$(this).closest('.panel-group').children().each(function(){
-		$(this).find('>.panel-heading').removeClass('active');
-		 });
-
-	 	$(this).closest('.panel-heading').toggleClass('active');
-	});
-
-	//Initiat WOW JS
-	new WOW().init();
-
-	// portfolio filter
-	$(window).load(function(){'use strict';
-		var $portfolio_selectors = $('.portfolio-filter >li>a');
-		var $portfolio = $('.portfolio-items');
-		$portfolio.isotope({
-			itemSelector : '.portfolio-item',
-			layoutMode : 'fitRows'
-		});
+	var RGBChange = function() {
+	  $('#RGB').css('background', 'rgb('+r.getValue()+','+g.getValue()+','+b.getValue()+')')
+	};	
 		
-		$portfolio_selectors.on('click', function(){
-			$portfolio_selectors.removeClass('active');
-			$(this).addClass('active');
-			var selector = $(this).attr('data-filter');
-			$portfolio.isotope({ filter: selector });
-			return false;
+/*scroll to top*/
+
+$(document).ready(function(){
+	$(function () {
+		$.scrollUp({
+	        scrollName: 'scrollUp', // Element ID
+	        scrollDistance: 300, // Distance from top/bottom before showing element (px)
+	        scrollFrom: 'top', // 'top' or 'bottom'
+	        scrollSpeed: 300, // Speed back to top (ms)
+	        easingType: 'linear', // Scroll to top easing (see http://easings.net/)
+	        animation: 'fade', // Fade, slide, none
+	        animationSpeed: 200, // Animation in speed (ms)
+	        scrollTrigger: false, // Set a custom triggering element. Can be an HTML string or jQuery object
+					//scrollTarget: false, // Set a custom target element for scrolling to the top
+	        scrollText: '<i class="fa fa-angle-up"></i>', // Text for element, can contain HTML
+	        scrollTitle: false, // Set a custom <a> title if required.
+	        scrollImg: false, // Set true to use image
+	        activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+	        zIndex: 2147483647 // Z-Index for the overlay
 		});
 	});
-
-	// Contact form
-	var form = $('#main-contact-form');
-	form.submit(function(event){
-		event.preventDefault();
-		var form_status = $('<div class="form_status"></div>');
-		$.ajax({
-			url: $(this).attr('action'),
-
-			beforeSend: function(){
-				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn() );
-			}
-		}).done(function(data){
-			form_status.html('<p class="text-success">' + data.message + '</p>').delay(3000).fadeOut();
-		});
-	});
-
-	
-	//goto top
-	$('.gototop').click(function(event) {
-		event.preventDefault();
-		$('html, body').animate({
-			scrollTop: $("body").offset().top
-		}, 500);
-	});	
-
-	//Pretty Photo
-	$("a[rel^='prettyPhoto']").prettyPhoto({
-		social_tools: false
-	});	
 });
