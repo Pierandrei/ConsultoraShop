@@ -131,8 +131,8 @@ function checar_caps_lock1(ev) {
                                         <input type="text" placeholder="Name Completo">
                                         <input title="Data de Nascimento" type="date" placeholder="Aniversario">
                                         <input title="CPF" type="text" name="cpf" id="cpf" onblur="javascript: validarCPF(this.value, this);" onkeypress="javascript: mascara(this, cpf_mask);"  maxlength="14" placeholder="CPF"/>
-                                        <input title="Telefone Fixo" type="text" placeholder="Telefone Fixo"  onkeypress="javascript:telefone(this, '## ####-####', event)" maxlength="12">
-                                        <input title="Telefone Celular" type="text" placeholder="Telefone Celular" onkeypress="javascript:telefone(this, '## #####-####', event)" maxlength="13">
+                                        <input title="Telefone Fixo" type="text" placeholder="Telefone Fixo"  onkeyup="javascript:telefone(this, '## ####-####', event)" maxlength="12">
+                                        <input title="Telefone Celular" type="text" placeholder="Telefone Celular" onkeyup="javascript:telefone(this, '## #####-####', event)" maxlength="13">
                                         <button type="submit" class="btn btn-info">Alterar</button>
                                     </form>
                                 <!--</div>-->

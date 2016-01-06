@@ -1,19 +1,5 @@
 <?php
-
-// A sessão precisa ser iniciada em cada página diferente
-if (!isset($_SESSION)) session_start();
-
-// Verifica se não há a variável da sessão que identifica o usuário
-if (!isset($_SESSION['UsuarioID'])) {//OR ($_SESSION['Usuario'] != $nivel_necessario)) {
-	// Destrói a sessão por segurança
-	session_destroy();
-	// Redireciona o visitante de volta pro login
-	header("Location: ./index.html"); exit;
-}
-
- $idlogin = 1;// $_SESSION['UsuarioID'];
- $idUsuarioNome = 'marcos gabriel andrade pierandrei';//$_SESSION['Usuario'];
- $idExpiracao = '25 de abril de 2016';//$_SESSION['Expiracao'];
+include './divfolder/session.php'; 
 ?>
 
 <!DOCTYPE html>
