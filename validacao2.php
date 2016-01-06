@@ -56,7 +56,7 @@ require_once('./Conection.php');
             
 //             require_once('./agenda.html');//mudar qdo tiver a pagina correta
 //              echo  '<script> swal("Cadastrado(a) com Sucesso!", "Bem vindo(a) a ConsultoraShop!", "success");</script>';
-             header("Location: ./agenda.html"); 
+             header("Location: ./agenda.php"); 
             exit;
 
         }

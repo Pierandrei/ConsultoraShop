@@ -48,7 +48,7 @@ require_once('./Conection.php');
 	// Redireciona o visitante
 //	if ($_SESSION['UsuarioNivel'] == 1) 
        // echo  '<script> swal("", "Login com Sucesso!", "success");</script>';
-	header("Location: ./agenda.html"); 
+	header("Location: ./agenda.php"); 
 //	
 //		if ($_SESSION['UsuarioNivel'] == 2) 
 //	header("Location: ../pagina_prof/prof.php"); 

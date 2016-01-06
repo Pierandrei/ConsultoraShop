@@ -1,3 +1,21 @@
+<?php
+
+// A sessão precisa ser iniciada em cada página diferente
+if (!isset($_SESSION)) session_start();
+
+// Verifica se não há a variável da sessão que identifica o usuário
+if (!isset($_SESSION['UsuarioID'])) {//OR ($_SESSION['Usuario'] != $nivel_necessario)) {
+	// Destrói a sessão por segurança
+	session_destroy();
+	// Redireciona o visitante de volta pro login
+	header("Location: ./index.html"); exit;
+}
+
+ $idlogin = 1;// $_SESSION['UsuarioID'];
+ $idUsuarioNome = 'marcos gabriel andrade pierandrei';//$_SESSION['Usuario'];
+ $idExpiracao = '25 de abril de 2016';//$_SESSION['Expiracao'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,32 +44,7 @@
 
 <body>
 	<header id="header"><!--header-->
-		<div class="header_top"><!--header_top-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<div class="contactinfo">
-							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +55 31 XXXX XXXX</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> email@consultorashop.com</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="social-icons pull-right">
-							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-<!--								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>-->
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/header_top-->
-		
+             <?php include './divfolder/topmenu.html';?>
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
 				<div class="row">
@@ -62,12 +55,11 @@
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
+<!--							<ul class="nav navbar-nav">-->
 							<ul class="nav navbar-nav">
-								<!--<li><a href="#"><i class="fa fa-user"></i> Account</a></li>-->
-								<!--<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>-->
-								<!--<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>-->
-<!--								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>-->
-								<!--<li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>-->
+								<li><a><i class="fa fa-user"></i> <?php echo strtolower(substr($idUsuarioNome, 0, 20)).'...';  ?></a></li>
+								<li><a href=""><i class="fa fa-calendar"></i> <?php echo "Expira em $idExpiracao" ?></a></li>
+                                                                <li><a href="logout.php"><i class="fa fa-lock"></i>Sair</a></li>
 							</ul>
 						</div>
 					</div>
@@ -75,7 +67,7 @@
 			</div>
 		</div><!--/header-middle-->
 	
-		<div class="header-bottom">header-bottom
+		<div class="header-bottom">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-9">
@@ -117,7 +109,7 @@
 					</div>
 				</div>
 			</div>
-		</div>/header-bottom-->
+		</div>
 	</header><!--/header-->
 	
 	<section id="slider"><!--slider-->
