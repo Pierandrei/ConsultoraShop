@@ -29,7 +29,11 @@ require_once('./Conection.php');
             if (!isset($_SESSION)) session_start();
 
             // Salva os dados encontrados na sessão
-            $_SESSION['UsuarioID'] = $idUsuario;
+        $_SESSION['UsuarioID'] = $idUsuario;
+        $_SESSION['Usuario'] = $nome;
+        setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+        date_default_timezone_set('America/Sao_Paulo');
+        $_SESSION['Expiracao'] = strftime('%d de %B de %Y', strtotime("+30 day",strtotime("now")));
     //	$_SESSION['UsuarioNivel'] = $resultado['nivelacesso'];
     //	$idlog = $resultado['idlog'];
 

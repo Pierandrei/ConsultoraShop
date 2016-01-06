@@ -11,7 +11,7 @@ require_once('./Conection.php');
     $senha = mysql_real_escape_string($_POST['txSenha']);
     // Validação do usuário/senha digitados para cadastro pedente de aprovação
     //SELECT idUsuario, nome FROM  `usuario` JOIN pessoa ON idpessoa =  `Pessoa_idPessoa` 
-    $sqlP = "SELECT idUsuario, nome FROM usuario JOIN pessoa ON idpessoa = Pessoa_idPessoa WHERE ativo=1 and senha = '". sha1($senha) ."' and login = '". $usuario ."' LIMIT 1;";
+    $sqlP = "SELECT idUsuario, nome, dataExpiracao FROM usuario JOIN pessoa ON idpessoa = Pessoa_idPessoa WHERE ativo=1 and senha = '". sha1($senha) ."' and login = '". $usuario ."' LIMIT 1;";
     $query = mysql_query($sqlP);
     
     if (mysql_num_rows($query) != 1) {
@@ -36,7 +36,10 @@ require_once('./Conection.php');
 
 	// Salva os dados encontrados na sessão
 	$_SESSION['UsuarioID'] = $resultado['idUsuario'];
-        $_SESSION['Usuario'] = $resultado['idUsuario'];
+        $_SESSION['Usuario'] = $resultado['nome'];
+        setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+        date_default_timezone_set('America/Sao_Paulo');
+        $_SESSION['Expiracao'] = strftime('%d de %B de %Y', $resultado['dataExpiracao']);
 //	$_SESSION['UsuarioNivel'] = $resultado['nivelacesso'];
 //	$idlog = $resultado['idlog'];
 
