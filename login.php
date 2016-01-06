@@ -81,7 +81,7 @@ function checar_caps_lock1(ev) {
 								<!--<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>-->
 								<!--<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>-->
 <!--								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>-->
-								<li><a href="index.php"><i class="fa fa-backward"></i> Home</a></li>
+								<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
 							</ul>
 						</div>
 					</div>

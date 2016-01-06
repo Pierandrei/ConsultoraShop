@@ -37,9 +37,9 @@ require_once('./Conection.php');
 	// Salva os dados encontrados na sessão
 	$_SESSION['UsuarioID'] = $resultado['idUsuario'];
         $_SESSION['Usuario'] = $resultado['nome'];
-        setlocale(LC_ALL, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-        date_default_timezone_set('America/Sao_Paulo');
-        $_SESSION['Expiracao'] = strftime('%d de %B de %Y', $resultado['dataExpiracao']);
+        setlocale(LC_ALL, "pt_BR", "pt_BR.iso-8859-1", "pt_BR.utf-8", "portuguese");
+	date_default_timezone_set('America/Sao_Paulo');
+        $_SESSION['Expiracao'] = strftime("%d de %B de %Y", strtotime( $resultado['dataExpiracao'] ));//strftime('%d de %B de %Y', $resultado['dataExpiracao']);
 //	$_SESSION['UsuarioNivel'] = $resultado['nivelacesso'];
 //	$idlog = $resultado['idlog'];
 

@@ -44,28 +44,8 @@ if (!isset($_SESSION['UsuarioID'])) {//OR ($_SESSION['Usuario'] != $nivel_necess
 
 <body>
 	<header id="header"><!--header-->
-             <?php include './divfolder/topmenu.html';?>
-		<div class="header-middle"><!--header-middle-->
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-4">
-						<div class="logo pull-left">
-                                                    <a href="index.html"><img src="images/home/logo_reduzido.png" alt="" /></a>
-						</div>
-					</div>
-					<div class="col-sm-8">
-						<div class="shop-menu pull-right">
-<!--							<ul class="nav navbar-nav">-->
-							<ul class="nav navbar-nav">
-								<li><a><i class="fa fa-user"></i> <?php echo strtolower(substr($idUsuarioNome, 0, 20)).'...';  ?></a></li>
-								<li><a href=""><i class="fa fa-calendar"></i> <?php echo "Expira em $idExpiracao" ?></a></li>
-                                                                <li><a href="logout.php"><i class="fa fa-lock"></i>Sair</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!--/header-middle-->
+               <?php include './divfolder/topmenu.html'; ?>
+               <?php include './divfolder/cabecalho.php'; ?>
 	        
 		<div class="header-bottom">
 			<div class="container">
