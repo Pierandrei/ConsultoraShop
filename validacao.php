@@ -10,7 +10,8 @@ require_once('./Conection.php');
     $usuario = mysql_real_escape_string($_POST['txmail']);
     $senha = mysql_real_escape_string($_POST['txSenha']);
     // Validação do usuário/senha digitados para cadastro pedente de aprovação
-    $sqlP = "SELECT * FROM usuario WHERE ativo=1 and senha = '". sha1($senha) ."' and login = '". $usuario ."' LIMIT 1;";
+    //SELECT idUsuario, nome FROM  `usuario` JOIN pessoa ON idpessoa =  `Pessoa_idPessoa` 
+    $sqlP = "SELECT idUsuario, nome FROM usuario JOIN pessoa ON idpessoa = Pessoa_idPessoa WHERE ativo=1 and senha = '". sha1($senha) ."' and login = '". $usuario ."' LIMIT 1;";
     $query = mysql_query($sqlP);
     
     if (mysql_num_rows($query) != 1) {
@@ -22,27 +23,29 @@ require_once('./Conection.php');
     } else {
         //para niveis de acesso
         
-       require_once('./login.html');//mudar qdo tiver a pagina correta
-              echo  '<script> swal("", "Login com Sucesso!", "success");</script>';
-                header("Location: ./login.html"); //mudar qdo tiver a pagina correta
-                exit;
+//       require_once('./login.html');//mudar qdo tiver a pagina correta
+//              
+//                header("Location: ./login.html"); //mudar qdo tiver a pagina correta
+//                exit;
         
-//	// Salva os dados encontados na variável $resultado
-//	$resultado = mysql_fetch_assoc($query);
-//
-//	// Se a sessão não existir, inicia uma
-//	if (!isset($_SESSION)) session_start();
-//
-//	// Salva os dados encontrados na sessão
-//	$_SESSION['UsuarioID'] = $resultado['idlog'];
+	// Salva os dados encontados na variável $resultado
+	$resultado = mysql_fetch_assoc($query);
+
+	// Se a sessão não existir, inicia uma
+	if (!isset($_SESSION)) session_start();
+
+	// Salva os dados encontrados na sessão
+	$_SESSION['UsuarioID'] = $resultado['idUsuario'];
+        $_SESSION['Usuario'] = $resultado['idUsuario'];
 //	$_SESSION['UsuarioNivel'] = $resultado['nivelacesso'];
 //	$idlog = $resultado['idlog'];
-//
+
 //     mysql_query("UPDATE login SET data_ultimo_login = now() WHERE idlog ='{$idlog}'");
-//
-//	// Redireciona o visitante
+
+	// Redireciona o visitante
 //	if ($_SESSION['UsuarioNivel'] == 1) 
-//	header("Location: ../pagina_projeto/projeto.php"); 
+       // echo  '<script> swal("", "Login com Sucesso!", "success");</script>';
+	header("Location: ./agenda.html"); 
 //	
 //		if ($_SESSION['UsuarioNivel'] == 2) 
 //	header("Location: ../pagina_prof/prof.php"); 
@@ -52,7 +55,7 @@ require_once('./Conection.php');
 //	
 //		if ($_SESSION['UsuarioNivel'] == 3) 
 //	header("Location: ../pagina_adm/adm.php"); 
-//	 exit;
+	 exit;
     }
     
 

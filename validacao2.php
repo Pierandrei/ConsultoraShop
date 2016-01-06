@@ -25,9 +25,34 @@ require_once('./Conection.php');
                  $rs2=mysql_query("INSERT INTO usuario (Pessoa_idPessoa, dataCadastro, login, senha, ativo, dataExpiracao)
                      values ($idPessoa,NOW(),'".$mail."', '". sha1($senha) ."', 1, DATE_ADD(NOW(), INTERVAL 30 DAY));");
             }
-             require_once('./login.html');//mudar qdo tiver a pagina correta
-              echo  '<script> swal("Cadastrado(a) com Sucesso!", "Bem vindo(a) a ConsultoraShop!", "success");</script>';
-                header("Location: ./login.html"); //mudar qdo tiver a pagina correta
+            $idUsuario = mysql_insert_id();
+            if (!isset($_SESSION)) session_start();
+
+            // Salva os dados encontrados na sessão
+            $_SESSION['UsuarioID'] = $idUsuario;
+    //	$_SESSION['UsuarioNivel'] = $resultado['nivelacesso'];
+    //	$idlog = $resultado['idlog'];
+
+    //     mysql_query("UPDATE login SET data_ultimo_login = now() WHERE idlog ='{$idlog}'");
+
+            // Redireciona o visitante
+    //	if ($_SESSION['UsuarioNivel'] == 1) 
+        //    echo  '<script> swal("", "Login com Sucesso!", "success");</script>';
+        
+    //	
+    //		if ($_SESSION['UsuarioNivel'] == 2) 
+    //	header("Location: ../pagina_prof/prof.php"); 
+    //	
+    //		if ($_SESSION['UsuarioNivel'] == 4) 
+    //	header("Location: ../pagina_coord/coord.php"); 
+    //	
+    //		if ($_SESSION['UsuarioNivel'] == 3) 
+    //	header("Location: ../pagina_adm/adm.php"); 
+             //exit;
+            
+//             require_once('./agenda.html');//mudar qdo tiver a pagina correta
+//              echo  '<script> swal("Cadastrado(a) com Sucesso!", "Bem vindo(a) a ConsultoraShop!", "success");</script>';
+             header("Location: ./agenda.html"); 
             exit;
 
         }
