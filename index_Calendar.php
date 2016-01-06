@@ -85,7 +85,7 @@ if (isset($_POST['from']))
 
         <div class="container">
 
-                <div class="row">
+                <div class="row2">
                         <div class="page-header"><h2></h2></div>
                                 <div class="pull-left form-inline"><br>
                                         <div class="btn-group">
