@@ -1,4 +1,3 @@
-
 <?php
 // PARTE DE CALENDÁRIO
 include './Conection.php';
