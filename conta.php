@@ -60,9 +60,9 @@ include 'session.php';
             <div class="container">
                 <div class="register-req">
                     <h4>Minha Assinatura</h4>
-                    <br>Data do Cadastro: <?php echo $cadastroBD; ?>
-                    <br>Status: Ativo
-                    <br>Pacote atual Expira em: <?php echo $idExpiracao; ?>
+                    <br><b>Data do Cadastro: </b><?php echo $cadastroBD; ?>
+                    <br><b>Status: </b>Ativo
+                    <br><b>Pacote atual Expira em: </b><?php echo $idExpiracao; ?>
                 </div><!--/register-req-->
                 <div class="register-req">
                     <h4>Meus Dados</h4><br>

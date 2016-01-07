@@ -18,9 +18,9 @@
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li><a href="./agenda.php">Agenda</a></li>
-                            <li class="dropdown"><a href="#" class="active">Controle de Estoque<i class="fa fa-angle-down"></i></a>
+                            <li class="dropdown"><a href="#">Estoque<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="#" class="active">Gerar Boleto</a></li>
+                                    <li><a href="#">Gerar Boleto</a></li>
                                 </ul>
                             </li> 
                             <li><a href="#">Clientes</a></li> 
