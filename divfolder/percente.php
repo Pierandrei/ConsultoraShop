@@ -15,7 +15,7 @@ for ($j = 0; $j < 7; $j++) {
 $total = number_format($variavelCont / $variavelPercenteTotal * 100, 0);
 if ($total < 100) {
     ?>
-    <li><a href="../conta.php"><i class="fa fa-list-alt"></i> <?php echo "Seu perfil está " . $total . "% completo"; ?></a></li>
+    <li><a href="./conta.php"><i class="fa fa-list-alt"></i> <?php echo "Seu perfil está " . $total . "% completo"; ?></a></li>
         <?php
     }
     ?>
