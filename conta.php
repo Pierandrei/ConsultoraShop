@@ -49,8 +49,10 @@ include 'session.php';
 
     <body>
         <header id="header"><!--header-->
+
             <?php include './divfolder/topmenu.html'; ?>
             <?php include './divfolder/cabecalho.php'; ?>
+            <?php include './controleUser/dadosUser.php'; ?>
             <?php include './divfolder/menuView.php'; ?>
         </header><!--/header-->
 
