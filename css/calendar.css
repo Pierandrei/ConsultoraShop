@@ -13,6 +13,9 @@
   content: "";
   line-height: 0;
 }
+.row{
+	
+}
 .cal-row-fluid:after {
   clear: both;
 }
@@ -37,7 +40,10 @@
     line-height: 540px;
 }
 
-
+.container{
+	    width: 500px;
+		margin-left: 30px;
+}
 .cal-row-fluid .controls-row [class*="cal-cell"] + [class*="cal-cell"] {
   margin-left: 0%;
 }

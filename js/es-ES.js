@@ -12,13 +12,13 @@ window.calendar_languages['es-ES'] = {
 
 	title_year:  'Ano {0}',
 	title_month: '{0} {1}',
-	title_week:  'Semana {0} del {1}',
+	title_week:  'Semana {0} de {1}',
 	title_day:   '{0} {1} {2} {3}',
 
 	week:        'Semana {0}',
 	all_day:     'O dia todo',
-	time:        'Tempo',
-	events:      'Desenvolvimentos',
+	time:        '',//'Tempo',
+	events:      '',//'Desenvolvimentos',
 	before_time: 'Tempo antes da fita final',
 	after_time:  'Terminar após uma fita temporária',
 
@@ -35,7 +35,7 @@ window.calendar_languages['es-ES'] = {
 	m10: 'Novembro',
 	m11: 'Dezembro',
 
-	ms0:  'Jane',
+	ms0:  'Jan',
 	ms1:  'Fev',
 	ms2:  'Mar',
 	ms3:  'Abr',

@@ -917,6 +917,9 @@ if(!String.prototype.formatNum) {
 			self.options.day = $(this).data('cal-date');
 			self.view(view);
 		});
+		
+		
+		
 		$('.cal-cell').dblclick(function() {
 			var view = $('[data-cal-date]', this).data('cal-view');
 			self.options.day = $('[data-cal-date]', this).data('cal-date');

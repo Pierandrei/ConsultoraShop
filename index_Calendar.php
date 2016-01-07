@@ -1,10 +1,12 @@
+<meta charset="utf-8">
 <?php
 
 // incluimos el archivo de funciones
-include 'funciones.php';
+include './funciones.php';
 
 // incluimos el archivo de configuracion
-include 'config.php';
+include './config.php';
+
 
 // Verificamos si se ha enviado el campo con name from
 if (isset($_POST['from'])) 
@@ -38,10 +40,11 @@ if (isset($_POST['from']))
         $clase  = evaluar($_POST['class']);
 
         // insertamos el evento
-        $query="INSERT INTO eventos VALUES(null,'$titulo','$body','','$clase','$inicio','$final','$inicio_normal','$final_normal')";
+        $sqlP="INSERT INTO eventos VALUES(null,'$titulo','$body','','$clase','$inicio','$final','$inicio_normal','$final_normal')";
 
         // Ejecutamos nuestra sentencia sql
-        $conexao->query($query); 
+		$query = mysql_query($sqlP);
+        //$conexao->query($query); 
 
         // Obtenemos el ultimo id insetado
         $im=$conexao->query("SELECT MAX(id) AS id FROM eventos");
@@ -85,7 +88,7 @@ if (isset($_POST['from']))
 
         <div class="container">
 
-                <div class="row2">
+                <div class="row">
                         <div class="page-header"><h2></h2></div>
                                 <div class="pull-left form-inline"><br>
                                         <div class="btn-group">
@@ -120,7 +123,7 @@ if (isset($_POST['from']))
                                         <p>One fine body&hellip;</p>
                                     </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">próximo</button>
                                 </div>
                             </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->
@@ -274,7 +277,7 @@ if (isset($_POST['from']))
 
 
                     <label for="title">Título</label>
-                    <input type="text" required autocomplete="off" name="title" class="form-control" id="title" placeholder="Introduce un título">
+                    <input type="text" required autocomplete="off" name="title" class="form-control" id="title" placeholder="Introduzir um título">
 
                     <br>
 
