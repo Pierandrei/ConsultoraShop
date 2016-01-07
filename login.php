@@ -92,7 +92,7 @@
                     <div class="col-sm-4 col-sm-offset-1">
                         <div class="login-form"><!--login form-->
                             <h2>Acesso ConsultoraShop</h2>
-                            <form method="post" action="./controleUser/validacao.php">
+                            <form method="post" action="./validacao.php">
                                 <input name="txmail" type="email" placeholder="Endereço de Email" required="required"/>
                                 <input name="txSenha" type="password" placeholder="Senha" onkeypress="checar_caps_lock(event)" maxlength="15" required="required" pattern="[a-zA-Z0-9]+" />
                                 <div class="warning" align="center" id="aviso_caps_lock" style="visibility: hidden;color:rgb(255,127,39)"><B> CAPS LOCK ATIVADO</B></div>
@@ -106,7 +106,7 @@
                     <div class="col-sm-4">
                         <div class="signup-form"><!--sign up form-->
                             <h2>Nova ConsultoraShop</h2>
-                            <form method="post" action="./controleUser/validacao2.php">
+                            <form method="post" action="./validacao2.php">
                                 <input name="txNomeNew" type="text" placeholder="Nome" required="required"/>
                                 <input name="txmailNew" type="email" placeholder="Endereço de Email" required="required"/>
                                 <input name="txSenhaNew" type="password" placeholder="Senha" onkeypress="checar_caps_lock1(event)" maxlength="15" required="required" pattern="[a-zA-Z0-9]+"/>
