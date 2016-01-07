@@ -11,6 +11,7 @@ if (!isset($_SESSION['UsuarioID'])) {//OR ($_SESSION['Usuario'] != $nivel_necess
 }
 
  $idlogin =  $_SESSION['UsuarioID'];
+ $idloginPessoa =  $_SESSION['PessoaID'];
  $idUsuarioNome = $_SESSION['Usuario'];
  if (strlen($idUsuarioNome) >= 20){
      $idUsuarioNome = strtolower(substr($idUsuarioNome, 0, 20)).'...';
