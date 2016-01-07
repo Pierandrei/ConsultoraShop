@@ -24,8 +24,8 @@ if (mysql_num_rows($query) == 1) {
     $rs = mysql_query("INSERT INTO pessoa (nome, email) values ('" . $nome . "','" . $mail . "');");
     $idPessoa = mysql_insert_id();
     if ($rs) {
-        $rs2 = mysql_query("INSERT INTO usuario (Pessoa_idPessoa, dataCadastro, login, senha, ativo, dataExpiracao)
-                     values ($idPessoa,NOW(),'" . $mail . "', '" . sha1($senha) . "', 1, DATE_ADD(NOW(), INTERVAL 30 DAY));");
+        $rs2 = mysql_query("INSERT INTO usuario (Pessoa_idPessoa, dataCadastro, login, senha, ativo, dataExpiracao,nivel)
+                     values ($idPessoa,NOW(),'" . $mail . "', '" . sha1($senha) . "', 1, DATE_ADD(NOW(), INTERVAL 30 DAY),1);");
     }
     $idUsuario = mysql_insert_id();
     if (!isset($_SESSION))
