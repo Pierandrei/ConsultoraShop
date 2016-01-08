@@ -23,7 +23,7 @@
                                     <li><a href="#">Gerar Boleto</a></li>
                                 </ul>
                             </li> 
-                            <li><a href="#">Clientes</a></li> 
+                            <li><a href="./clientes.php">Clientes</a></li> 
                             <li><a href="#">Contas a Receber</a></li>
                             <li><a href="#">Contas a Pagar</a></li>
                             <li><a href="#">Relatórios</a></li>
