@@ -86,9 +86,9 @@ if (isset($_POST['from']))
 </head>
 <body style="background: white;">
 
-        <div class="container">
+        <div class="cont">
 
-                <div class="row">
+                <div class="rowss">
                         <div class="page-header"><h2></h2></div>
                                 <div class="pull-left form-inline"><br>
                                         <div class="btn-group">
@@ -108,8 +108,8 @@ if (isset($_POST['from']))
                                         <button class="btn btn-info" data-toggle='modal' data-target='#add_evento'>Adicionar Evento</button>
                                     </div>
 
-                </div><hr>
-
+                </div><hr></br
+                <br><br>
                 <div class="row">
                         <div id="calendar"></div> <!-- Aqui se mostrara nuestro calendario -->
                         <br><br>
