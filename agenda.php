@@ -37,23 +37,9 @@ include 'session.php';
             <?php include './divfolder/menuView.php'; ?>
         </header><!--/header-->
 
-        <?php //include './index_Calendar.php';?>
+        <?php include './index_Calendar.php';?>
 
-        <section ><!--form-->
-            <div class="container">
-                <div class="col-sm-3">
-
-                    <?php
-                    include './calendario/calendar.php';
-
-                    $calendar = new Calendar();
-
-                    echo $calendar->show();
-                    ?>
-
-                </div>
-            </div>
-        </section><!--/form-->
+        
 
 
         <?php include './divfolder/footer.php'; ?>
