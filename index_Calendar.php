@@ -84,7 +84,7 @@ if (isset($_POST['from']))
     </head>
 
 </head>
-<body style="background: white;">
+<body style="background:rgb(255,245,241);">
 
         <div class="cont">
 

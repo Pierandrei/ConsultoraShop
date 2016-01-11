@@ -49,11 +49,11 @@ window.calendar_languages['es-ES'] = {
 	ms11: 'Dez',
 
 	d0: 'Domingo',
-	d1: 'Segunda-Feira',
-	d2: 'Terça-Feira',
-	d3: 'Quarta-Feira',
-	d4: 'Quinta-Feira',
-	d5: 'Sexta-Feira',
+	d1: 'Segunda',
+	d2: 'Terça',
+	d3: 'Quarta',
+	d4: 'Quinta',
+	d5: 'Sexta',
 	d6: 'Sábado',
 
 	easter:       'Páscoa',
