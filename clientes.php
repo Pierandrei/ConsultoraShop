@@ -60,6 +60,21 @@ include 'session.php';
                 prettyPrint();
             });
         </script>
+
+        <link rel="stylesheet" type="text/css" href="Tabela/css/jquery.dataTables.css">
+        <script type="text/javascript" language="javascript" src="Tabela/js/jquery.js"></script>
+        <script type="text/javascript" language="javascript" src="Tabela/js/jquery.dataTables.js"></script>
+        <script type="text/javascript" language="javascript" class="init">
+
+            $(document).ready(function() {
+                $('#example').dataTable({
+                    "aProcessing": true,
+                    "aServerSide": true,
+                    "ajax": "Tabela/server-response.php",
+                });
+            });
+
+        </script>
     </head>
 
     <body>
@@ -73,49 +88,24 @@ include 'session.php';
 
             <div class="container">
 
-
-                <!--<div class="container">-->
-                     <div class="col-sm-5">      
-                    <table class="table table-striped">
+                <div class="col-sm-10">      
+                    <table id="example" class="display" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>Firstname</th>
-                                <th>Lastname</th>
+                                <th>Primeiro Nome</th>
                                 <th>Email</th>
+                                <th>Mobile</th>
+                                <th>Start Date</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>john@example.com</td>
-                            </tr>
-                            <tr>
-                                <td>Mary</td>
-                                <td>Moe</td>
-                                <td>mary@example.com</td>
-                            </tr>
-                            <tr>
-                                <td>July</td>
-                                <td>Dooley</td>
-                                <td>july@example.com</td>
-                            </tr>
-                        </tbody>
                     </table>
                 </div>
 
-                <div class="col-sm-3">
-                    <div class="search_box pull-right">
-                        <input type="text" placeholder="Search"/>
-                    </div>
-                </div>
-
-                <div class="col-sm-3">
+                <div class="col-sm-2">
 
                     <div class="responsive">
-                        <h3>Responsive</h3>
                         <div class="text-center">
-                            <button class="demo btn btn-primary btn-large" data-toggle="modal" href="#responsive">View Demo</button>
+                            <button class="demo btn btn-primary btn-large" data-toggle="modal" href="#responsive">Novo Cliente</button>
                         </div>
                     </div>
 
