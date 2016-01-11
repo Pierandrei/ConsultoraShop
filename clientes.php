@@ -105,7 +105,7 @@ include 'session.php';
 
                     <div class="responsive">
                         <div class="text-center">
-                            <button class="demo btn btn-primary btn-large" data-toggle="modal" href="#responsive">Novo Cliente</button>
+                            <button class="demo btn btn-info btn-large" data-toggle="modal" href="#responsive">Novo Cliente</button>
                         </div>
                     </div>
 
@@ -141,7 +141,7 @@ include 'session.php';
                         </div>
                         <div class="modal-footer">
                             <button type="button" data-dismiss="modal" class="btn">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-info">Save changes</button>
                         </div>
                     </div>
 
