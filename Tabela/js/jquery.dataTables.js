@@ -10975,7 +10975,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sSortAscending": ": activate to sort column ascending",
+				"sSortAscending": ": Ativar para classificar coluna ascendente",
 	
 				/**
 				 * ARIA label that is added to the table headers when the column may be
@@ -10998,7 +10998,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sSortDescending": ": activate to sort column descending"
+				"sSortDescending": ": Ativar para classificar coluna descendente"
 			},
 	
 			/**
@@ -11028,7 +11028,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sFirst": "First",
+				"sFirst": "primeiro",
 	
 	
 				/**
@@ -11074,7 +11074,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "próximo",
 	
 	
 				/**
@@ -11097,7 +11097,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "Anterior"
 			},
 	
 			/**
@@ -11152,7 +11152,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "Mostrando _START_ para _END_ de _TOTAL_ Entradas",
 	
 	
 			/**
@@ -11173,7 +11173,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "Mostrando 0 para 0 de 0 Entradas",
 	
 	
 			/**
@@ -11313,7 +11313,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": " _MENU_ por página",
 	
 	
 			/**
@@ -11337,7 +11337,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLoadingRecords": "Loading...",
+			"sLoadingRecords": "Carregando...",
 	
 	
 			/**
@@ -11358,7 +11358,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sProcessing": "Processing...",
+			"sProcessing": "Processando...",
 	
 	
 			/**
@@ -11393,7 +11393,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "Procurar:",
 	
 	
 			/**
@@ -11451,7 +11451,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No matching records found"
+			"sZeroRecords": "Os registros correspondentes foram encontrados"
 		},
 	
 	
