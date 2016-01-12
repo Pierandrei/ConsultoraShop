@@ -12,7 +12,7 @@ $usuario = mysql_real_escape_string($_POST['txmail']);
 $senha = mysql_real_escape_string($_POST['txSenha']);
 // Validação do usuário/senha digitados para cadastro pedente de aprovação
 //SELECT idUsuario, nome FROM  `usuario` JOIN pessoa ON idpessoa =  `Pessoa_idPessoa` 
-echo $sqlP = "SELECT idUsuario, nome, dataExpiracao,nivel, Pessoa_idPessoa FROM usuario JOIN pessoa ON idpessoa = Pessoa_idPessoa WHERE ativo=1 and senha = '" . sha1($senha) . "' and login = '" . $usuario . "' LIMIT 1;";
+$sqlP = "SELECT idUsuario, nome, dataExpiracao,nivel, Pessoa_idPessoa FROM usuario JOIN pessoa ON idpessoa = Pessoa_idPessoa WHERE ativo=1 and senha = '" . sha1($senha) . "' and login = '" . $usuario . "' LIMIT 1;";
 $query = mysql_query($sqlP);
 
 if (mysql_num_rows($query) != 1) {

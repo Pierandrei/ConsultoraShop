@@ -150,6 +150,7 @@
 		height: auto !important;
 		max-height: none !important;
 		overflow: visible !important;
+                background-color:rgb(255,245,241);
 	}
 	
 	.modal-footer,
