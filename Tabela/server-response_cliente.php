@@ -178,13 +178,20 @@ if ($iTotal > 0) {
     while ($aRow = mysql_fetch_array($rResult)) {
         $row = array();
         for ($i = 0; $i < count($aColumns); $i++) {
-            if ($aColumns[$i] == "version") {
-                /* Special output formatting for 'version' column */
-                $row[] = ($aRow[$aColumns[$i]] == "0") ? '-' : $aRow[$aColumns[$i]];
-            } else if ($aColumns[$i] != ' ') {
+//            if ($aColumns[$i] == "version") {
+//                /* Special output formatting for 'version' column */
+//                $row[] = ($aRow[$aColumns[$i]] == "0") ? '-' : $aRow[$aColumns[$i]];
+//            } else 
+            if ($aColumns[$i] != ' ') {
                 /* General output */
-                $row[] = $aRow[$aColumns[$i]];
+                if ($i == 4) {
+                    $row[] = date("d/m/Y", strtotime($aRow[$aColumns[$i]]));; //date('d/m/Y', $aRow[$aColumns[$i]]);
+                    //date_format($aRow[$aColumns[$i]], 'd/m/y');
+                } else {
+                    $row[] = $aRow[$aColumns[$i]];
+                }
             }
+//            
         }
         $output['aaData'][] = $row;
     }
