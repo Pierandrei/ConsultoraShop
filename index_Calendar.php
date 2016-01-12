@@ -251,7 +251,7 @@ if (isset($_POST['from']))
                     <label for="from">Início</label>
                     <div class='input-group date' id='from'>
                         <input type='text' id="from" name="from" class="form-control" readonly />
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                        <span class="input-group-addon"/><span class="glyphicon glyphicon-calendar"></span>
                     </div>
 
                     <br>
@@ -259,7 +259,7 @@ if (isset($_POST['from']))
                     <label for="to">Final</label>
                     <div class='input-group date' id='to'>
                         <input type='text' name="to" id="to" class="form-control" readonly />
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                        <span class="input-group-addon"/><span class="glyphicon glyphicon-calendar"></span>
                     </div>
 
                     <br>
