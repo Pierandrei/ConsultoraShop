@@ -72,7 +72,7 @@ include 'session.php';
                 $('#example').dataTable({
                     "aProcessing": true,
                     "aServerSide": true,
-                    "ajax": "Tabela/server-response.php",
+                    "ajax": "Tabela/server-response_cliente.php",
                 });
             });
 

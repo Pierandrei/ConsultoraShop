@@ -164,37 +164,37 @@ $iTotal = $aResultTotal[0];
 /*
  * Output
  */
-/*
-  $output = array(
-  "sEcho" => intval($_GET['sEcho']),
-  "iTotalRecords" => $iTotal,
-  "iTotalDisplayRecords" => $iFilteredTotal,
-  "aaData" => array()
-  );
- */
-$row = array();
 
-if ($rResult) {
+//  $output = array(
+//  "sEcho" => intval($_GET['sEcho']),
+//  "iTotalRecords" => $iTotal,
+//  "iTotalDisplayRecords" => $iFilteredTotal,
+//  "aaData" => array()
+//  );
+
+
+
+if ($iTotal > 0) {
     while ($aRow = mysql_fetch_array($rResult)) {
+        $row = array();
         for ($i = 0; $i < count($aColumns); $i++) {
-            $row[] = $aRow[$aColumns[$i]];
+            if ($aColumns[$i] == "version") {
+                /* Special output formatting for 'version' column */
+                $row[] = ($aRow[$aColumns[$i]] == "0") ? '-' : $aRow[$aColumns[$i]];
+            } else if ($aColumns[$i] != ' ') {
+                /* General output */
+                $row[] = $aRow[$aColumns[$i]];
+            }
         }
-//        for ($i = 0; $i < count($aColumns); $i++) {
-//            if ($aColumns[$i] == "version") {
-//                /* Special output formatting for 'version' column */
-//                $row[] = ($aRow[$aColumns[$i]] == "0") ? '-' : $aRow[$aColumns[$i]];
-//            } else if ($aColumns[$i] != ' ') {
-//                /* General output */
-//                $row[] = $aRow[$aColumns[$i]];
-//            }
-//        }
+        $output['aaData'][] = $row;
     }
 } else {
+    $row = array();
     for ($i = 0; $i < count($aColumns); $i++) {
         $row[] = "";
     }
+    $output['aaData'][] = $row;
 }
 
-$output['aaData'][] = $row;
 echo json_encode($output);
 ?>
