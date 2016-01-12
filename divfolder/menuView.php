@@ -18,11 +18,12 @@
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li><a href="./agenda.php">Agenda</a></li>
-                            <li class="dropdown"><a href="#">Estoque<i class="fa fa-angle-down"></i></a>
+                            <li><a href="./estoque.php">Estoque</a></li>
+<!--                            <li class="dropdown"><a href="#">Estoque<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="#">Gerar Boleto</a></li>
                                 </ul>
-                            </li> 
+                            </li> -->
                             <li><a href="./clientes.php">Clientes</a></li> 
                             <li><a href="#">Contas a Receber</a></li>
                             <li><a href="#">Contas a Pagar</a></li>
