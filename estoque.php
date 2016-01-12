@@ -75,7 +75,30 @@ include 'session.php';
                     "ajax": "Tabela/server-response_estoque.php",
                 });
             });
-
+        </script>
+        <script language='JavaScript'>
+            function Enum(e) {
+                var tecla = (window.event) ? event.keyCode : e.which;
+                if ((tecla > 47 && tecla < 58))
+                    return true;
+                else {
+                    if (tecla == 8 || tecla == 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            function NumVirgPonto(e) {
+                var tecla = (window.event) ? event.keyCode : e.which;
+                if (tecla == 44 || tecla == 46 || (tecla > 47 && tecla < 58))
+                    return true;
+                else {
+                    if (tecla == 8 || tecla == 0)
+                        return true;
+                    else
+                        return false;
+                }
+            }
         </script>
     </head>
 
@@ -107,93 +130,35 @@ include 'session.php';
 
                     <div class="responsive">
                         <div class="text-center">
-                            <button class="demo btn btn-info btn-large" data-toggle="modal" href="#responsive">Novo Cliente</button>
+                            <button class="demo btn btn-info btn-large" data-toggle="modal" href="#responsive">Novo Produto</button>
                         </div>
                     </div>
-
 
                     <div id="responsive" class="modal hide fade" tabindex="-1" data-width="760">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            <h3>Novo Cliente</h3>
+                            <h3>Novo Produto</h3>
                         </div>
-                        <form method="post"  name="formButton" action="./validacaoCliente.php">
+                        <form method="post"  name="formButton" action="./validaestoque.php">
                             <div class="modal-body">
                                 <div class="row-fluid">
-                                    <div class="col-sm-6">
-                                        <!--<form name="formPersonal" method="post" >-->
-                                        <h4>Dados Pessoais</h4>
-                                        <p><input type="text" name="nome" placeholder="Name Completo" required="required"/></p>
-                                        <p><input title="CPF" type="text" name="cpf" id="cpf"  onblur="javascript: validarCPF(this.value, this);" onkeypress="javascript: mascara(this, cpf_mask);"  maxlength="14" placeholder="CPF"/></p>
-                                        <select name="sexoSelect">
-                                            <option value="padrao">Selecione o Sexo</option>
-                                            <option value="feminino" >Feminino</option>
-                                            <option value="masculino">Masculino</option>
-                                        </select>
-                                        <p><input title="Data de Nascimento" name="nasc" type="date" placeholder="Aniversario" /></p>
-                                        <p><input type="email" name="email" placeholder="Email" required="required"/></p>
-                                        <p><input title="Telefone Fixo" name="fixo" type="text" placeholder="Telefone Fixo"  onkeyup="javascript:telefone(this, '## ####-####', event)" maxlength="12"/></p>
-                                        <p><input title="Telefone Celular" name="celular" type="text" placeholder="Telefone Celular"  onkeyup="javascript:telefone(this, '## #####-####', event)" maxlength="13" required="required"/></p>
-                                        <!--</form>-->
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <!--<form name="formEnd" method="post" >-->
-                                        <h4>Endereço</h4>
-                                        <p><input type="text" name="rua" placeholder="Rua" /></p>
-                                        <p><input type="text" name="complemento" placeholder="Complemento" /></p>
-                                        <p><input type="text" name="numero" placeholder="Número" /></p>
-                                        <p><input type="text" name="bairro" placeholder="Bairro" /></p>
-                                        <p><input type="text" name="cidade" placeholder="Cidade"/></p>
-                                        <select name="estados">
-                                            <option value="padrao">Selecione o Estado</option>
-                                            <option value="AC">Acre (AC)</option>
-                                            <option value="AL">Alagoas (AL)</option>
-                                            <option value="AP">Amapá (AP)</option>
-                                            <option value="AM">Amazonas (AM)</option>
-                                            <option value="BA">Bahia (BA)</option>
-                                            <option value="CE">Ceará (CE)</option>
-                                            <option value="DF">Distrito Federal (DF)</option>
-                                            <option value="ES">Espírito Santo (ES)</option>
-                                            <option value="GO">Goiás (GO)</option>
-                                            <option value="MA">Maranhão (MA)</option>
-                                            <option value="MT">Mato Grosso (MT)</option>
-                                            <option value="MS">Mato Grosso do Sul (MS)</option>
-                                            <option value="MG">Minas Gerais (MG)</option>
-                                            <option value="PA">Pará (PA) </option>
-                                            <option value="PB">Paraíba (PB)</option>
-                                            <option value="PR">Paraná (PR)</option>
-                                            <option value="PE">Pernambuco (PE)</option>
-                                            <option value="PI">Piauí (PI)</option>
-                                            <option value="RJ">Rio de Janeiro (RJ)</option>
-                                            <option value="RN">Rio Grande do Norte (RN)</option>
-                                            <option value="RS">Rio Grande do Sul (RS)</option>
-                                            <option value="RO">Rondônia (RO)</option>
-                                            <option value="RR">Roraima (RR)</option>
-                                            <option value="SC">Santa Catarina (SC)</option>
-                                            <option value="SP">São Paulo (SP)</option>
-                                            <option value="SE">Sergipe (SE)</option>
-                                            <option value="TO">Tocantins (TO)</option>
-                                        </select>
-                                        <!--</form>-->
+                                    <div class="col-sm-8">
+                                        <p><input type="text" name="codigo" maxlength="10" placeholder="Codigo do Produto" required="required"/></p>
+                                        <p><input type="text" name="produto" placeholder="Descrição do Produto" required="required"/></p>
+                                        <p><input type="text" name="preco" maxlength="6" placeholder="Preço do Produto ex:(3.45)" onKeyPress="return NumVirgPonto(event)" required="required"/></p>
+                                        <p><input type="text" name="qtd" maxlength="3" placeholder="Quantidade do Produto" onKeyPress="return Enum(event)" required="required"/></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-
                                 <button type="button" data-dismiss="modal" class="btn btn-default">Fechar</button>
-                                <button type="submit" class="btn btn-info">Novo Cliente</button>
-
+                                <button type="submit" class="btn btn-info">Novo Produto</button>
                             </div>
                         </form>
                     </div>
-
                 </div>
             </div>
         </section><!--/form-->
-
-
         <?php include './divfolder/footer.php'; ?>
-
-
     </body>
 </html>
