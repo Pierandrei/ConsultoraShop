@@ -62,20 +62,45 @@ include 'session.php';
                 prettyPrint();
             });
         </script>
- 
+
         <link rel="stylesheet" type="text/css" href="Tabela/css/jquery.dataTables.css">
         <script type="text/javascript" language="javascript" src="Tabela/js/jquery.js"></script>
         <script type="text/javascript" language="javascript" src="Tabela/js/jquery.dataTables.js"></script>
         <script type="text/javascript" language="javascript" class="init">
-
+            var derp;
             $(document).ready(function() {
-                $('#example').dataTable({
+                derp = $('#example').DataTable({
                     "aProcessing": true,
                     "aServerSide": true,
                     "ajax": "Tabela/server-response_cliente.php",
                 });
+                $('#example').on('click', 'tr', function() {
+                    var data = derp.row(this).data();
+                    
+                    $(function() {
+                        $.fn.modalmanager.defaults.resize = true;
+                        $('[data-source]').each(function() {
+                            var $this = $(this),
+                                    $source = $($this.data('source'));
+                            var text = [];
+                            $source.each(function() {
+                                var $s = $(this);
+                                if ($s.attr('type') == 'text/javascript') {
+                                    text.push($s.html().replace(/(\n)*/, ''));
+                                } else {
+                                    text.push($s.clone().wrap('<div>').parent().html());
+                                }
+                            });
+                            $this.text(text.join('\n\n').replace(/\t/g, '    '));
+                        });
+                        prettyPrint();
+                    });
+                    
+                    var query = "jsonCliente.php?mail=".concat(encodeURIComponent(data[1]));
+                    $("#informacoes").load(query);
+//                    alert(data[1]);
+                });
             });
-
         </script>
     </head>
 
@@ -89,23 +114,7 @@ include 'session.php';
         <section >
 
             <div class="container">
-
-                <div class="col-sm-10">      
-                    <table id="example" class="display" cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Email</th>
-                                <th>Celular</th>
-                                <th>Fixo</th>
-                                <th>Aniversario</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-
-                <div class="col-sm-2">
-
+                <div class="col-sm-1">
                     <div class="responsive">
                         <div class="text-center">
                             <button class="demo btn btn-info btn-large" data-toggle="modal" href="#responsive">Novo Cliente</button>
@@ -180,14 +189,30 @@ include 'session.php';
                                 </div>
                             </div>
                             <div class="modal-footer">
-
                                 <button type="button" data-dismiss="modal" class="btn btn-default">Fechar</button>
                                 <button type="submit" class="btn btn-info">Novo Cliente</button>
-
                             </div>
                         </form>
                     </div>
-
+                </div>
+                <div class="col-sm-12"></div>  
+                <div class="col-sm-12"></div>
+                <p><br><br></p>
+                <div class="col-sm-9">      
+                    <!--mudar a questao de responsive-->
+                    <table id="example" data-toggle="modal" href="#responsive" class="display" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Celular</th>
+                                <th>Fixo</th>
+                                <th>Aniversario</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="col-sm-3" id="informacoes">
                 </div>
             </div>
         </section><!--/form-->

@@ -11074,7 +11074,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Próximo",
+				"sNext": "próximo",
 	
 	
 				/**
@@ -11195,7 +11195,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtrada por _MAX_ total de registros)",
+			"sInfoFiltered": "(filtered from _MAX_ total entries)",
 	
 	
 			/**
@@ -11617,7 +11617,7 @@
 		 *      } );
 		 *    } )
 		 */
-		"sPaginationType": "Números_Simples",
+		"sPaginationType": "simple_numbers",
 	
 	
 		/**
