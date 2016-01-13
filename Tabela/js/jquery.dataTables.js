@@ -11195,7 +11195,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtrada por _MAX_ total de registros)",
+			"sInfoFiltered": "(filtrado em _MAX_ total de registros)",
 	
 	
 			/**
@@ -11617,7 +11617,7 @@
 		 *      } );
 		 *    } )
 		 */
-		"sPaginationType": "Números_Simples",
+		"sPaginationType": "simple_numbers",
 	
 	
 		/**
