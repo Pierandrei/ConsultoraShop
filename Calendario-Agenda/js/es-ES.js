@@ -63,7 +63,6 @@ window.calendar_languages['es-ES'] = {
 
 	holidays: {
 		'01-01':    "Ano Novo",
-		'06-01':    "-",
 		'19-03':    "-",
 		'easter-3': "-",
 		'easter-2': "-",
