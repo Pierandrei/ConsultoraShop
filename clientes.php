@@ -74,31 +74,16 @@ include 'session.php';
                     "aServerSide": true,
                     "ajax": "Tabela/server-response_cliente.php",
                 });
+
                 $('#example').on('click', 'tr', function() {
                     var data = derp.row(this).data();
-                    
-                    $(function() {
-                        $.fn.modalmanager.defaults.resize = true;
-                        $('[data-source]').each(function() {
-                            var $this = $(this),
-                                    $source = $($this.data('source'));
-                            var text = [];
-                            $source.each(function() {
-                                var $s = $(this);
-                                if ($s.attr('type') == 'text/javascript') {
-                                    text.push($s.html().replace(/(\n)*/, ''));
-                                } else {
-                                    text.push($s.clone().wrap('<div>').parent().html());
-                                }
-                            });
-                            $this.text(text.join('\n\n').replace(/\t/g, '    '));
-                        });
-                        prettyPrint();
-                    });
-                    
-                    var query = "jsonCliente.php?mail=".concat(encodeURIComponent(data[1]));
-                    $("#informacoes").load(query);
-//                    alert(data[1]);
+                    if (typeof(data) == "undefined")
+                    {
+                        window.event.cancelBubble = true;
+                    } else {
+                        var query = "jsonCliente.php?mail=".concat(encodeURIComponent(data[1]));
+                        $("#informacoes").load(query);
+                    }
                 });
             });
         </script>
@@ -198,11 +183,11 @@ include 'session.php';
                 <div class="col-sm-12"></div>  
                 <div class="col-sm-12"></div>
                 <p><br><br></p>
-                <div class="col-sm-9">      
+                <div class="col-sm-12">      
                     <!--mudar a questao de responsive-->
-                    <table id="example" data-toggle="modal" href="#responsive" class="display" cellspacing="0" width="100%">
+                    <table id="example" data-toggle="modal" href="#responsive2" class="display" cellspacing="0" width="100%">
                         <thead>
-                            <tr>
+                            <tr id="teste">
                                 <th>Nome</th>
                                 <th>Email</th>
                                 <th>Celular</th>
@@ -212,7 +197,18 @@ include 'session.php';
                         </thead>
                     </table>
                 </div>
-                <div class="col-sm-3" id="informacoes">
+                <div id="responsive2" class="modal hide fade" tabindex="-1" data-width="760">
+                    <form method="post"  name="formButton" action="./validacaoCliente.php">
+                        <div class="modal-body" >
+                            <div class="row-fluid" id="informacoes">
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-dismiss="modal" class="btn btn-default">Fechar</button>
+                            <button type="submit" class="btn btn-info">Atualizar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section><!--/form-->

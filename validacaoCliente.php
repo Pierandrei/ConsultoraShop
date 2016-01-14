@@ -44,7 +44,7 @@ if (mysql_num_rows($query) == 1) {
 //            or fatal_error('MySQL Error: ' . mysql_errno());
 
     $idPessoaBD = mysql_insert_id();
-    echo "<script>alert('$idPessoaBD');</script>";
+//    echo "<script>alert('$idPessoaBD');</script>";
     require_once('./clientes.php'); //mudar qdo tiver a pagina correta
     ?><script> sweetAlert("", "Novo Cliente cadastrado(a) com Sucesso.", "success");</script><?php
     header("Location: ./clientes.php");
