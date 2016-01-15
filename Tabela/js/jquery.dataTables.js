@@ -11074,7 +11074,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "próximo",
+				"sNext": "Próximo",
 	
 	
 				/**
@@ -11152,7 +11152,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Mostrando _START_ para _END_ de _TOTAL_ Entradas",
+			"sInfo": "Mostrando _START_ para _END_ de _TOTAL_ Registros",
 	
 	
 			/**
@@ -11195,7 +11195,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			"sInfoFiltered": "(Filtrado de _MAX_ registros totais)",
 	
 	
 			/**
@@ -11451,7 +11451,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "Os registros correspondentes foram encontrados"
+			"sZeroRecords": "Não foram encontrados registros com os critérios de busca informado"
 		},
 	
 	

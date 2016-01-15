@@ -11,7 +11,7 @@ if (isset($_GET['mail'])) {
 
 function tractQueryUser($get, $variavelSessao) {
 
-    $query = "SELECT nome, cpf, sexo, aniversario, email, telfixo, celular, rua, complemento, numero, bairro, cidade, estado
+    $query = "SELECT idCliente, nome, cpf, sexo, aniversario, email, telfixo, celular, rua, complemento, numero, bairro, cidade, estado
             FROM cliente JOIN pessoa ON Pessoa_idPessoa = idPessoa WHERE Usuario_idUsuario = $variavelSessao AND email = '$get';
     ";
     return set($query);
@@ -27,6 +27,7 @@ function set($parameter) {
     $outputHtml .='<div class="col-sm-6">';
     $outputHtml .='<form name="formPersonal" method="post" >';
     $outputHtml .='<h4>Dados Pessoais</h4>';
+    $outputHtml .= '<input type="text" name="cliente" style="display: none" value="' . $query['idCliente'] . '" />';
     $outputHtml .= '<input type="text" name="nome" placeholder="Name Completo" value="' . $query['nome'] . '" required="required"/>';
     $outputHtml .= '<input title="CPF" type="text" name="cpf" id="cpf" value="' . $query['cpf'] . '" onblur="javascript: validarCPF(this.value, this);" onkeypress="javascript: mascara(this, cpf_mask);"  maxlength="14" placeholder="CPF"/>';
     $outputHtml .= '<select name="sexoSelect">

@@ -198,7 +198,7 @@ include 'session.php';
                     </table>
                 </div>
                 <div id="responsive2" class="modal hide fade" tabindex="-1" data-width="760">
-                    <form method="post"  name="formButton" action="./validacaoCliente.php">
+                    <form method="post"  name="formButton" action="./validacaoInsertCliente.php">
                         <div class="modal-body" >
                             <div class="row-fluid" id="informacoes">
 
