@@ -402,7 +402,8 @@
 .cal-row-head [class*="cal-cell"] {
     font-weight: bolder;
     text-align: center;
-    background-color: rgb(255, 245, 241);
+    color: #fff;
+    background-color: #ab637a;
     border: 0px solid;
     padding: 5px 0;
 }
@@ -416,7 +417,7 @@
 .cal-month-day {
     height: 100px;
 }
-[class*="cal-cell"]:hover {
+[class*="cal-cell1 cal-cell"]:hover {
     background-color: #ededed;
 }
 .cal-year-box [class*="span"],
@@ -489,7 +490,7 @@ span[data-cal-date]:hover {
     font-size: 1.9em;
 }
 .cal-day-weekend span[data-cal-date] {
-    color: darkred;
+    color: black;
 }
 #cal-week-box {
     border: 1px solid #e1e1e1;

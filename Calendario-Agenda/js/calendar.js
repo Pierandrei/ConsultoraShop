@@ -912,11 +912,11 @@ if(!String.prototype.formatNum) {
 
 		$('*[data-toggle="tooltip"]').tooltip({container: 'body'});
 
-		$('*[data-cal-date]').click(function() {
-			var view = $(this).data('cal-view');
-			self.options.day = $(this).data('cal-date');
-			self.view(view);
-		});
+//		$('*[data-cal-date]').click(function() {
+//			var view = $(this).data('cal-view');
+//			self.options.day = $(this).data('cal-date');
+//			self.view(view);
+//		});
 		$('.cal-cell').dblclick(function() {
 			var view = $('[data-cal-date]', this).data('cal-view');
 			self.options.day = $('[data-cal-date]', this).data('cal-date');
@@ -1036,10 +1036,10 @@ if(!String.prototype.formatNum) {
 			})
 		;
 
-		week.click(function() {
-			self.options.day = $(this).data('cal-week');
-			self.view('week');
-		});
+//		week.click(function() {
+//			self.options.day = $(this).data('cal-week');
+//			self.view('week');
+//		});
 
 		$('a.event').mouseenter(function() {
 			$('a[data-event-id="' + $(this).data('event-id') + '"]').closest('.cal-cell1').addClass('day-highlight dh-' + $(this).data('event-class'));
