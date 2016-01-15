@@ -19,6 +19,7 @@
                         <ul class="nav navbar-nav collapse navbar-collapse">
                             <li><a href="./agenda.php">Agenda</a></li>
                             <li><a href="./estoque.php">Estoque</a></li>
+                            <li><a href="#">Vendas</a></li>
 <!--                            <li class="dropdown"><a href="#">Estoque<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="#">Gerar Boleto</a></li>
