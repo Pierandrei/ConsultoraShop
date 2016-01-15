@@ -222,7 +222,7 @@ include 'session.php';
                     </table>
                 </div>
                 <div id="responsive2" class="modal hide fade" tabindex="-1" data-width="760">
-                    <form method="post"  name="formButton" action="./validacaoInsertCliente.php">
+                    <form method="post"  name="formButton" action="./validacaoInsertEstoque.php">
                         <div class="modal-body" >
                             <div class="row-fluid" id="informacoes">
 
@@ -230,7 +230,7 @@ include 'session.php';
                         </div>
                         <div class="modal-footer">
                             <button type="button" data-dismiss="modal" class="btn btn-default">Fechar</button>
-                            <button type="submit" class="btn btn-info">Atualizar Preço</button>
+                            <button type="submit" class="btn btn-info">Atualizar Produto</button>
                         </div>
                     </form>
                 </div>
